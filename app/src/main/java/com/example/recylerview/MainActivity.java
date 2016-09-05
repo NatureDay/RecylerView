@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
         initData();
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        //LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        //layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         //GridLayoutManager layoutManager = new GridLayoutManager(this, 4);
-        StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL);
+        //StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL);
 
         mRecyclerView.setLayoutManager(layoutManager);
 
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        //mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
-        mRecyclerView.addItemDecoration(new DividerGridItemDecoration(this));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+        //mRecyclerView.addItemDecoration(new DividerGridItemDecoration(this));
     }
 
     private void initData() {
